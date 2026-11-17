@@ -1,3 +1,9 @@
+picompose-hello (1.1.2) trixie; urgency=medium
+
+  * Print a second line in the greeting (#4)
+
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 23:35:13 +0000
+
 picompose-hello (1.1.1) trixie; urgency=medium
 
   * Create a pre-release per merged pull request (#3)
