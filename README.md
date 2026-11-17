@@ -70,3 +70,5 @@ The repository needs the secret `HUB_DISPATCH_TOKEN` and a branch protection of 
 This project is released under the [MIT License](LICENSE).
 
 The greeting is a test of the build and publishing pipeline.
+
+The version of this package is raised by the label of the pull request that is merged.
