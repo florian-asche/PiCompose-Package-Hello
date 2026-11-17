@@ -35,7 +35,7 @@ actually ran, for example the hardware and package version, or "built and linted
 ## Checklist
 
 - [ ] The package builds with `dpkg-buildpackage -us -uc -b` and passes lintian.
-- [ ] `debian/changelog` has a new version for the change.
+- [ ] The title and description of this PR are fit to be the changelog entry, they become the text of the package changelog.
 - [ ] `README.md` and `docs/` match the change.
 - [ ] Breaking changes (renamed packages, changed config paths, changed dependencies) are described in the PR.
 - [ ] I reviewed and understand every change in this PR (see [AI policy](AI_POLICY.md)).

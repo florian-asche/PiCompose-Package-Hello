@@ -5,8 +5,8 @@ on:
     branches:
       - main
       - test
-    tags:
-      - 'v[0-9]*'
+  release:
+    types: [published]
   pull_request:
     branches:
       - main
@@ -17,6 +17,7 @@ permissions:
 jobs:
   package:
     name: Package
+    if: github.event_name != 'release' || !github.event.release.prerelease
     uses: florian-asche/PiCompose-Repository/.github/workflows/package-build.yml@main
     permissions:
       contents: write
