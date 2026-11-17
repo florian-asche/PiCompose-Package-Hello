@@ -1,5 +1,17 @@
-picompose-hello (0.0.0) trixie; urgency=medium
+picompose-hello (1.0.1) trixie; urgency=medium
 
-  * Placeholder. The CI replaces this file with an entry made from the release or pull request text.
+  * Release 1.0.1.
 
- -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 00:00:00 +0100
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 07:12:00 +0000
+
+picompose-hello (1.0.0) trixie; urgency=medium
+
+  * Release 1.0.0.
+
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 07:00:00 +0000
+
+picompose-hello (0.0.1) trixie; urgency=medium
+
+  * Release 0.0.1.
+
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 06:32:48 +0000

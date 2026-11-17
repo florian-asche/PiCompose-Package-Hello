@@ -8,7 +8,7 @@ Homepage: https://github.com/florian-asche/PiCompose-Package-Hello
 Rules-Requires-Root: no
 
 Package: picompose-hello
-Architecture: any
+Architecture: amd64 arm64
 Depends: ${misc:Depends}
 Description: PiCompose test package
  Minimal package that prints a greeting. It exists to test the build,

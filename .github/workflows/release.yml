@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version of the release, higher than the last one, for example 1.2.3
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Release
+    uses: florian-asche/PiCompose-Repository/.github/workflows/package-release.yml@main
+    with:
+      version: ${{ inputs.version }}
+    permissions:
+      contents: write
+    secrets:
+      hub-token: ${{ secrets.HUB_DISPATCH_TOKEN }}
