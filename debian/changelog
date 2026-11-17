@@ -1,3 +1,9 @@
+picompose-hello (1.0.3) trixie; urgency=medium
+
+  * Version from merged pull request labels, tags only for releases
+
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 07:41:24 +0000
+
 picompose-hello (1.0.2) trixie; urgency=medium
 
   * Release 1.0.2.
