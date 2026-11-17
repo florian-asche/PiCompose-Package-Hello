@@ -18,7 +18,7 @@ picompose-hello
 ```
 debian/
   control           package metadata, build dependencies, architecture
-  changelog         the releases, written by the release workflow
+  changelog         the version history, written by the workflows
   rules             build instructions (plain dh)
   install           which files go where
   copyright         license
@@ -36,11 +36,12 @@ picompose-hello     the script installed to /usr/bin
 
 ## Versioning and changelog
 
-`debian/changelog` holds the releases and is part of the package, so `apt changelog picompose-hello` shows the whole history. You do not edit it by hand, the release workflow writes it.
+The version of the package is the first entry of `debian/changelog`, which is part of the package (`apt changelog picompose-hello` shows the whole history). You do not edit it by hand, the workflows write it.
 
-- **Release:** Start the workflow **Release** (Actions, Release, Run workflow) and enter a version like `1.2.3` that is higher than the last release. It writes the changelog entry from the notes GitHub generates from the merged pull requests, commits `debian/changelog` to `main`, tags that commit `v<version>`, creates the GitHub release and builds and publishes the package to the suite `trixie`. A release created by hand in the GitHub UI is not published.
-- **Push to `main`:** The package gets the version `<last release>+git<timestamp>.<sha>` and is published to the suite `trixie-nightly`. The changelog entry of this build, made from the title and description of the pull request, is only part of the package. Every build overwrites the previous one.
-- **Any other branch:** `<last release>+dev<timestamp>.<sha>`. Nothing is published, the packages are kept as workflow artifacts for 14 days. Use a branch per change to try it on a device.
+1. **Pull request:** Every pull request needs exactly one of the labels `major`, `minor` and `patch`. It decides how the version is raised when it is merged. Tick one box under "Version bump" in the description or set the label by hand. The check "Version label" fails until there is exactly one.
+2. **Merge to `main`:** The workflow raises the version in `debian/changelog` by the highest label of the merged pull requests, adds the titles of the pull requests as changelog entry, commits `debian/changelog` to `main` (the commit "Version 1.3.0"), builds exactly that version and publishes it to the suite `trixie-nightly`. No tag is created.
+3. **Release:** Start the workflow **Release** (Actions, Release, Run workflow). It tags the newest commit of `main` with `v<version>` of `debian/changelog`, creates the GitHub release and publishes that version to the suite `trixie`. Tags only exist for releases. A release created by hand in the GitHub UI is not published.
+4. **Any other branch:** The package gets the version `<version>+dev<timestamp>.<sha>`. Nothing is published, the packages are kept as workflow artifacts for 14 days. Use a branch per change to try it on a device.
 
 ## Local build
 
@@ -58,11 +59,11 @@ The workflow `.github/workflows/build.yml` calls the reusable workflow of the [P
 
 | Started by | Result | Version |
 | --- | --- | --- |
-| Workflow "Release" | suite `trixie` | the version you enter |
-| Push to `main` | suite `trixie-nightly` | `<last release>+git<timestamp>.<sha>` |
-| Push to another branch, pull request from a fork | artifact for 14 days | `<last release>+dev<timestamp>.<sha>` |
+| Push to `main` (merged pull request) | suite `trixie-nightly` | the next version, written to `debian/changelog` |
+| Workflow "Release" | suite `trixie`, GitHub release `v<version>` | the version of `debian/changelog` |
+| Push to another branch, pull request from a fork | artifact for 14 days | `<version>+dev<timestamp>.<sha>` |
 
-The repository needs the secret `HUB_DISPATCH_TOKEN`, see the [DEVELOPMENT.md](https://github.com/florian-asche/PiCompose-Repository/blob/main/DEVELOPMENT.md) of the APT repository.
+The repository needs the secret `HUB_DISPATCH_TOKEN` and a branch protection of `main` that requires the check "Version label" and lets `github-actions[bot]` push, see the [DEVELOPMENT.md](https://github.com/florian-asche/PiCompose-Repository/blob/main/DEVELOPMENT.md) of the APT repository.
 
 ## License
 
