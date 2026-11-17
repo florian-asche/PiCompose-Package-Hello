@@ -32,6 +32,7 @@ picompose-hello     the script installed to /usr/bin
 2. Rename the source and binary package in `debian/control` and the entries in `debian/changelog`. Package names start with `picompose-`.
 3. Set `Architecture: all` for scripts, configuration and device tree overlays, and `any` for compiled content. This example uses `any` so that it is built for `amd64`, `arm64` and `armhf`, which exercises the multi-architecture pipeline.
 4. Replace the script and `debian/install` with your own files, and adjust `debian/copyright` and `LICENSE`.
+5. Add the repository to `sources.yml` of the APT repository and add the secret `HUB_DISPATCH_TOKEN` to it.
 
 ## Versioning
 
@@ -51,7 +52,16 @@ The `.deb` files are written to the parent directory.
 
 ## Publishing
 
-Packages are built and published by the PiCompose APT repository, see its [DEVELOPMENT.md](https://github.com/florian-asche/PiCompose-Repository/blob/main/DEVELOPMENT.md). This repository has no build workflow of its own yet.
+The workflow `.github/workflows/build.yml` calls the reusable workflow of the [PiCompose-Repository](https://github.com/florian-asche/PiCompose-Repository), which builds the package and tells the APT repository to publish it.
+
+| Event | APT suite | Version |
+| --- | --- | --- |
+| Tag `v<version>`, for example `v0.1.1` | `trixie` | `0.1.1` |
+| Push to `main` | `trixie-nightly` | `0.1.1~git<timestamp>.<sha>` |
+| Push to the branch `test` | `trixie-test` | `0.1.1~test<timestamp>.<sha>` |
+| Pull request | none | built and linted only |
+
+The tag has to match the first entry of `debian/changelog`. Create it by publishing a GitHub release with that tag. The workflow attaches the packages to the release. The repository needs the secret `HUB_DISPATCH_TOKEN`, see the [DEVELOPMENT.md](https://github.com/florian-asche/PiCompose-Repository/blob/main/DEVELOPMENT.md) of the APT repository.
 
 ## License
 
