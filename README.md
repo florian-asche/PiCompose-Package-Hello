@@ -68,3 +68,5 @@ Create a GitHub release with the tag of the next version, and let GitHub generat
 ## License
 
 This project is released under the [MIT License](LICENSE).
+
+The greeting is a test of the build and publishing pipeline.
