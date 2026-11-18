@@ -1,5 +1,7 @@
 # PiCompose-Package-Software-Hello
 
+[![Version](https://github.com/florian-asche/PiCompose-Package-Software-Hello/actions/workflows/version.yml/badge.svg?branch=main)](https://github.com/florian-asche/PiCompose-Package-Software-Hello/actions/workflows/version.yml) [![GitHub Release Version](https://img.shields.io/github/v/release/florian-asche/PiCompose-Package-Software-Hello?label=version)](https://github.com/florian-asche/PiCompose-Package-Software-Hello/releases) [![GitHub License](https://img.shields.io/github/license/florian-asche/PiCompose-Package-Software-Hello)](https://github.com/florian-asche/PiCompose-Package-Software-Hello/blob/main/LICENSE)
+
 Example package `picompose-software-hello` for the [PiCompose APT repository](https://github.com/florian-asche/PiCompose-Repository). It prints a greeting and exists to test the build, signing and publishing pipeline end to end. It is not needed on a real device.
 
 The package was called `picompose-hello` before. It is not published under that name any more, so install the new name.
