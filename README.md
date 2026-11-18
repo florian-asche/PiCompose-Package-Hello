@@ -1,4 +1,4 @@
-# PiCompose-Package-Hello
+# PiCompose-Package-Software-Hello
 
 Example package `picompose-hello` for the [PiCompose APT repository](https://github.com/florian-asche/PiCompose-Repository). It prints a greeting and exists to test the build, signing and publishing pipeline end to end. It is not needed on a real device.
 

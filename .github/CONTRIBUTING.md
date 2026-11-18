@@ -1,6 +1,6 @@
-# Contributing to PiCompose-Package-Hello
+# Contributing to PiCompose-Package-Software-Hello
 
-Everybody is invited and welcome to contribute to PiCompose-Package-Hello. Packaging fixes are appreciated.
+Everybody is invited and welcome to contribute to PiCompose-Package-Software-Hello. Packaging fixes are appreciated.
 
 - Fork the repository.
 - Create a branch and make your change.
