@@ -1,6 +1,6 @@
 # PiCompose-Package-Software-Hello
 
-Example package `picompose-hello` for the [PiCompose APT repository](https://github.com/florian-asche/PiCompose-Repository). It prints a greeting and exists to test the build, signing and publishing pipeline end to end. It is not needed on a real device.
+Example package `picompose-software-hello` for the [PiCompose APT repository](https://github.com/florian-asche/PiCompose-Repository). It prints a greeting and exists to test the build, signing and publishing pipeline end to end. It is not needed on a real device.
 
 The repository is also meant as a template: copy it as a starting point for a package of your own.
 
@@ -9,7 +9,7 @@ The repository is also meant as a template: copy it as a starting point for a pa
 Add the PiCompose APT repository (see [its documentation](https://github.com/florian-asche/PiCompose-Repository/blob/main/docs/apt_repository.md)), then:
 
 ```sh
-sudo apt install picompose-hello
+sudo apt install picompose-software-hello
 picompose-hello
 ```
 
@@ -36,7 +36,7 @@ picompose-hello     the script installed to /usr/bin
 
 ## Versioning and changelog
 
-The version of the package is the first entry of `debian/changelog`, which is part of the package (`apt changelog picompose-hello` shows the whole history). You do not edit it by hand, the workflows write it.
+The version of the package is the first entry of `debian/changelog`, which is part of the package (`apt changelog picompose-software-hello` shows the whole history). You do not edit it by hand, the workflows write it.
 
 1. **Pull request:** Every pull request needs exactly one of the labels `major`, `minor` and `patch`. It decides how the version is raised when it is merged. Tick one box under "Version bump" in the description or set the label by hand. The check "Version label" fails until there is exactly one. Make it required in the branch protection of `main`.
 2. **Merge to `main`:** The workflow "Version" raises the version by the highest label of the merged pull requests, adds the pull request titles to `debian/changelog` and commits it to `main` (the commit "Version 1.3.0"). It fails if a pull request has no or more than one label, or if a commit has no pull request. Start it by hand and choose a level to get past that.
@@ -50,7 +50,7 @@ The version of the package is the first entry of `debian/changelog`, which is pa
 ```sh
 sudo apt install build-essential debhelper devscripts fakeroot lintian
 dpkg-buildpackage -us -uc -b
-lintian ../picompose-hello_*.deb
+lintian ../picompose-software-hello_*.deb
 ```
 
 The `.deb` files are written to the parent directory.
