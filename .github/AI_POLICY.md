@@ -1,6 +1,6 @@
-# PiCompose-Package-Hello - AI Policy
+# PiCompose-Package-Software-Hello - AI Policy
 
-We support using AI (i.e., LLMs) as tools when contributing to PiCompose-Package-Hello. However, you are responsible for any contributions you submit, and we are responsible for any contributions we merge and release. PiCompose-Package-Hello produces packages that are installed as root on people's devices, so we hold a high bar for all contributions.
+We support using AI (i.e., LLMs) as tools when contributing to PiCompose-Package-Software-Hello. However, you are responsible for any contributions you submit, and we are responsible for any contributions we merge and release. PiCompose-Package-Software-Hello produces packages that are installed as root on people's devices, so we hold a high bar for all contributions.
 
 Our maintainers dedicate their time and expertise to reviewing contributions. Submitting AI-generated content that you have not personally reviewed and understood wastes that time and will not be accepted.
 
@@ -38,4 +38,4 @@ If an AI tool leaves a comment on your contribution, treat it as you would any o
 
 ## Enforcement
 
-Contributions that do not follow this policy will be closed. Repeated violations may result in being blocked from contributing to PiCompose-Package-Hello.
+Contributions that do not follow this policy will be closed. Repeated violations may result in being blocked from contributing to PiCompose-Package-Software-Hello.

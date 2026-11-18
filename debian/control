@@ -1,13 +1,13 @@
-Source: picompose-hello
+Source: picompose-software-hello
 Section: misc
 Priority: optional
 Maintainer: Florian Asche <github@florian-asche.de>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.7.0
-Homepage: https://github.com/florian-asche/PiCompose-Package-Hello
+Homepage: https://github.com/florian-asche/PiCompose-Package-Software-Hello
 Rules-Requires-Root: no
 
-Package: picompose-hello
+Package: picompose-software-hello
 Architecture: amd64 arm64
 Depends: ${misc:Depends}
 Description: PiCompose test package
