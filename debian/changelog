@@ -1,3 +1,9 @@
+picompose-software-hello (1.1.6) trixie; urgency=medium
+
+  * Check for updates of the GitHub Actions daily (#9)
+
+ -- Florian Asche <github@florian-asche.de>  Fri, 20 Nov 2026 20:08:58 +0000
+
 picompose-software-hello (1.1.5) trixie; urgency=medium
 
   * Describe the pipeline test for AI agents in CLAUDE.md (#8)
